@@ -1,0 +1,35 @@
+#basketContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 400px;
+    z-index: 3;
+    background-color: white;
+    transition: .4s;
+    transform: translateX(400px);
+
+    .basketCard {
+        position: relative;
+        display: flex;
+
+        .removeFromBasket {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+
+        .basketCardImg {
+            width: 60%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.basketVisible {
+    transform: translateX(0) !important;
+
+}

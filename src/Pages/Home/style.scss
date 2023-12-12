@@ -1,0 +1,264 @@
+#homePage {
+    .banner {
+        min-height: 90vh;
+        background-color: rgb(192, 192, 192);
+
+        .bannerImg {
+            background-image: url("https://logowik.com/content/uploads/images/665_dolcegabbana.jpg");
+            height: 100%;
+        }
+    }
+
+    .trendCont {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        padding: 5% 0;
+        gap: 15px;
+
+
+
+        .trendCard {
+            position: relative;
+            width: 500px;
+            height: 350px;
+            border: 1px solid black;
+
+            &:hover {
+                h1 {
+                    color: white;
+                }
+
+                h4 {
+                    color: white;
+                }
+            }
+
+            &:hover .hoverCard {
+                opacity: 1;
+
+                .text {
+                    width: auto;
+                    opacity: 1;
+                    transition: 1s !important;
+
+                }
+            }
+
+            .hoverCard {
+                transition: .4s;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #7180e0c5;
+                top: 0;
+                left: 0;
+                opacity: 0;
+
+                h1 {
+                    padding: 15px;
+                    width: max-content;
+                    margin: 2%;
+                }
+
+                h4 {
+                    padding: 15px;
+                    width: max-content;
+                    margin-left: 60%;
+
+                }
+
+                .text {
+                    position: absolute;
+                    bottom: 8%;
+                    left: 5%;
+                    font-size: 24px;
+                    padding-bottom: 10px;
+                    border-bottom: 3px solid white;
+                    width: 0;
+                    opacity: 0;
+                    overflow: hidden;
+                    transition: 1s !important;
+
+                    span {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .clothes {
+            background-image: url("https://logos-world.net/wp-content/uploads/2020/04/Ralph-Lauren-Symbol.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom;
+
+            h1 {
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.452);
+                width: max-content;
+                margin: 2%;
+            }
+
+            h4 {
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.452);
+                width: max-content;
+                margin-left: 60%;
+
+            }
+        }
+
+        .pourHomme {
+            background-image: url("https://www.parfumshop.az/image/cache/data/Tom%20Ford/tom-ford-tobacco-vanilletobacco-vanille-764-500x500-500x500.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom;
+
+            h1 {
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.452);
+                width: max-content;
+                margin: 2%;
+
+            }
+
+            h4 {
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.452);
+                width: max-content;
+                margin-left: 60%;
+
+            }
+        }
+
+        .watch {
+            background-image: url("https://hodinkee.imgix.net/uploads/article/hero_image/1915/MLC_Gravity_6.jpg?ixlib=rails-1.1.0&fm=jpg&q=55&auto=format&usm=12");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+
+            h1 {
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.452);
+                width: max-content;
+                margin: 2%;
+
+            }
+
+            h4 {
+                padding: 15px;
+                background-color: rgba(255, 255, 255, 0.452);
+                width: max-content;
+                margin-left: 60%;
+            }
+        }
+    }
+
+    .productsFilter {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        .text {
+            font-weight: 700;
+            font-size: 50px;
+        }
+
+        .filterCont {
+            padding: 1% 0;
+
+            .categoriesFilter {
+                font-size: 20px;
+                display: flex;
+                gap: 15px;
+
+                span {
+                    border-bottom: 1px solid white;
+
+                    &:hover {
+                        transition: .4s;
+                        cursor: pointer;
+                        border-bottom: 1px solid gray;
+                    }
+                }
+            }
+        }
+    }
+
+    .cardCont {
+        padding: 5% 0;
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+
+        .card {
+            // border: 1px solid black;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .name {
+                color: rgb(138, 138, 138);
+            }
+
+            .img {
+                position: relative;
+
+                img {
+                    transition: .4s;
+                    width: 400px;
+                    height: 350px;
+                    object-position: center;
+                    z-index: 0;
+                    transform: translateX(2.2rem);
+
+
+                }
+
+
+
+                .hoverCard {
+                    .details {
+                        transition: .4s;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%) translateY(3rem);
+                        opacity: 0;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .img {
+                    img {
+                        transform: translateX(2.2rem) translateY(-2.2rem) scale(1.2);
+                    }
+                }
+
+                .hoverCard .details {
+                    opacity: 1;
+                    transform: translate(-50%) translateY(0);
+                    padding: 10px 15px;
+                    border: 1px solid black;
+                    border-radius: 25px;
+                }
+            }
+        }
+    }
+}
+
+.underlined {
+    border-bottom: 1px solid gray !important;
+    transition: .4s;
+}

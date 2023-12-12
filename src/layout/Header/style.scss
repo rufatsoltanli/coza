@@ -1,0 +1,168 @@
+header {
+    .headerCont {
+        background-color: rgb(61, 61, 61);
+
+        .headerContent {
+            * {
+                color: rgb(173, 173, 173);
+            }
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+            height: 50px;
+
+            .leftSide {
+                .shipping {
+                    transition: .4s;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: rgb(223, 223, 223);
+                    }
+                }
+            }
+
+            .rightSide {
+                display: flex;
+                height: 100%;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 20px;
+                    height: 100%;
+
+                    border-left: 1px solid rgb(173, 173, 173);
+                    border-right: 1px solid rgb(173, 173, 173);
+
+                    span {
+                        transition: .4s;
+
+                        &:hover {
+                            color: #007bff;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .myAccount {
+                    border: none;
+                    border-right: 1px solid rgb(173, 173, 173);
+
+                }
+
+                .leanguage {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    nav {
+        padding: 30px 0;
+        transition: .4s;
+        position: fixed;
+        width: 100%;
+        top: 40px;
+
+        .navCont {
+
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .leftSide {
+                display: flex;
+                gap: 60px;
+
+                .image {
+                    img {
+                        width: 160px;
+                    }
+                }
+
+                .links {
+                    display: flex;
+                    gap: 20px;
+
+                    .linkFeatures {
+                        position: relative;
+
+                        .hot {
+                            position: absolute;
+                            top: -22px;
+                            right: -10px;
+                            background-color: hotpink;
+                            border-radius: 8px;
+                            padding: 0 2px;
+                            color: white;
+                        }
+                    }
+
+                    div {
+
+                        a {
+                            color: black;
+                            transition: .4s;
+
+                            &:hover {
+                                color: #717fe0;
+
+                            }
+                        }
+
+                        .active {
+                            color: #717fe0;
+                        }
+
+                    }
+                }
+            }
+
+            .rightSide {
+                display: flex;
+                gap: 30px;
+                font-size: 26px;
+
+                div {
+                    position: relative;
+
+                    i {
+                        transition: .4s;
+
+                        &:hover {
+                            color: #717fe0;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .count {
+                        position: absolute;
+                        top: -10px;
+                        right: -10px;
+                        font-size: 15px;
+                        height: 20px;
+                        width: 20px;
+                        background-color: #717fe0;
+                        text-align: center;
+                        border-radius: 4px;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.activeNav {
+    background-color: white;
+    top: 0;
+    z-index: 3;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
