@@ -30,9 +30,12 @@ function BasketProvider({ children }) {
         basket[index].count--
         setBasket([...basket])
     }
+    function totalPrice() {
+        return basket.reduce((prev, x) => prev + x.price * x.count, 0).toFixed(2)
+    }
     const [toggleBasketSideBar, setToggleBasketSideBar] = useState(false)
 
-    const data = { toggleBasketSideBar, setToggleBasketSideBar, basket, addToBasket, removeFromBasket, incCount, decCount }
+    const data = { toggleBasketSideBar, setToggleBasketSideBar, basket, addToBasket, removeFromBasket, incCount, decCount, totalPrice }
 
     return (
         <BasketContext.Provider value={data}>

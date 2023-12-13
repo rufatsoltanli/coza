@@ -1,9 +1,12 @@
 import React, { Children } from 'react'
 import BasketProvider from './BasketContext'
+import WishlistProvider from './WishlistContext'
 
 function MainProvider({ children }) {
     return (
-        <BasketProvider>{children}</BasketProvider>
+        <BasketProvider>
+            <WishlistProvider>{children}</WishlistProvider>
+        </BasketProvider>
     )
 }
 

@@ -1,0 +1,39 @@
+#wishListContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 400px;
+    z-index: 3;
+    background-color: white;
+    transition: .4s;
+    transform: translateX(400px);
+
+    .wishListCard {
+        position: relative;
+        display: flex;
+
+        .removeFromwishList {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            i{
+                color: red;
+            }
+        }
+
+        .wishListCardImg {
+            width: 60%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.wishListVisible {
+    transform: translateX(0) !important;
+
+}

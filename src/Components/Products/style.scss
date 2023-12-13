@@ -1,0 +1,146 @@
+#products {
+    .productsFilter {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        .text {
+            font-weight: 700;
+            font-size: 50px;
+        }
+
+        .filterCont {
+            padding: 1% 0;
+
+            display: flex;
+            justify-content: space-between;
+
+            .categoriesFilter {
+                font-size: 20px;
+                display: flex;
+                gap: 15px;
+
+                span {
+                    border-bottom: 1px solid white;
+
+                    &:hover {
+                        transition: .4s;
+                        cursor: pointer;
+                        border-bottom: 1px solid gray;
+                    }
+                }
+            }
+
+
+        }
+
+        .dropDown {
+            padding: 10px 0;
+            height: 0;
+            overflow: hidden;
+            transition: .4s;
+            opacity: 0;
+
+            input {
+                // transition: .4s;
+                height: 90%;
+                width: 100%;
+                border: 1px solid gray;
+                padding: 5px 2px;
+                font-size: large;
+                outline: none;
+            }
+        }
+
+        .visibleDropDown {
+            height: 80px;
+            opacity: 1;
+            transition: .4s;
+
+        }
+
+        .searchCont {
+            transition: .4s;
+
+            .openSearch {
+                transition: .4s;
+
+                border: 1px solid black;
+                padding: 3px;
+            }
+        }
+    }
+
+    .cardCont {
+        padding: 5% 0;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
+        .card {
+            // border: 1px solid black;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 400px;
+
+            .name {
+                color: rgb(138, 138, 138);
+            }
+
+            .img {
+                position: relative;
+
+                img {
+                    transition: .4s;
+                    width: 100%;
+                    height: 350px;
+                    object-position: center;
+                    z-index: 0;
+                    // transform: translateX(2.2rem);
+                    object-fit: cover;
+
+                }
+
+
+
+                .hoverCard {
+                    .details {
+                        transition: .4s;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%) translateY(3rem);
+                        opacity: 0;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .img {
+                    img {
+                        transform: translateX(0.2rem) translateY(-2.2rem) scale(1.2);
+                    }
+                }
+
+                .hoverCard .details {
+                    opacity: 1;
+                    transform: translate(-50%) translateY(0);
+                    padding: 10px 15px;
+                    border: 1px solid black;
+                    border-radius: 25px;
+                }
+            }
+        }
+    }
+}

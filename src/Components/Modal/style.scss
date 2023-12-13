@@ -30,6 +30,36 @@
             }
         }
 
+        .addToBasket {
+            font-size: 34px;
+            border-bottom: 1px solid white;
+            width: max-content;
+            transition: .4s;
+            cursor: pointer;
+
+
+            &:hover i {
+                color: rgb(59, 145, 59);
+            }
+
+            i {
+                transition: .5s;
+                padding: 0px 5px;
+            }
+        }
+
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+
+            i {
+                font-size: 50px;
+            }
+
+        }
+
         .image {
             width: 60%;
             height: 90%;
@@ -54,6 +84,36 @@
 
             .itemPrice {
                 font-size: 20px;
+            }
+        }
+
+        .addedToWish {
+            border: 5px solid rgb(105, 11, 11) !important;
+
+        }
+
+        .addToWishList {
+            margin-left: 10px;
+            border: 5px solid rgb(248, 171, 171);
+            border-radius: 50%;
+            width: max-content;
+            padding: 24px;
+            position: relative;
+            transition: 1s;
+
+            i {
+                position: absolute;
+                color: red;
+                opacity: 0;
+                transition: .4s;
+                top: 20%;
+                left: 50%;
+                transform: translate(-50%);
+                font-size: 34px;
+            }
+
+            .visible {
+                opacity: 1;
             }
         }
     }

@@ -3,9 +3,12 @@ import "./style.scss"
 import { NavLink } from "react-router-dom";
 import useNavScroll from '../../hook/useNavScroll';
 import { BasketContext } from '../../Context/BasketContext';
+import { WishlistContext } from '../../Context/WishlistContext';
 
 function Header() {
 
+
+  const { wishlist, toggleItemWishlist, checkIfInWishlist, toggleWishlistBar, setToggleWishlistBar } = useContext(WishlistContext)
 
   const { toggleBasketSideBar, setToggleBasketSideBar, basket } = useContext(BasketContext)
 
@@ -43,7 +46,7 @@ function Header() {
           <div className="rightSide">
             <div className="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></div>
             <div className="basketIcon" onClick={() => setToggleBasketSideBar(!toggleBasketSideBar)}><i class="fa-solid fa-cart-shopping"></i> <sup className='count'>{basket.length}</sup> </div>
-            <div className="wishListIcon"><i class="fa-regular fa-heart"></i> <sup className='count'></sup> </div>
+            <div className="wishListIcon" onClick={() => setToggleWishlistBar(!toggleWishlistBar)}><i class="fa-regular fa-heart"></i> <sup className='count'>{wishlist.length}</sup> </div>
           </div>
         </div>
       </nav>

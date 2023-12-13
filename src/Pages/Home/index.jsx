@@ -3,11 +3,20 @@ import "./style.scss"
 import Modal from '../../Components/Modal'
 import { BasketContext } from '../../Context/BasketContext'
 import Basket from '../../Components/Basket'
+import { WishlistContext } from '../../Context/WishlistContext'
+import Wishlist from '../../Components/Wishlist'
+import Products from '../../Components/Products'
 
 
 function HomePage() {
 
   const { basket, addToBasket, removeFromBasket, incCount, decCount, toggleBasketSideBar } = useContext(BasketContext)
+
+  const { wishlist, toggleItemWishlist, checkIfInWishlist } = useContext(WishlistContext)
+
+  const [inp, setInp] = useState("")
+
+  const [toggleSearch, setToggleSearch] = useState(false)
 
   const [idForModal, setIdForModal] = useState("")
 
@@ -34,6 +43,7 @@ function HomePage() {
     <>
       <section id='homePage'>
         <Basket />
+        <Wishlist />
         <div className="banner">
         </div>
         <div className="trendCont ">
@@ -77,42 +87,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <section id='products'>
-          <div className="productsFilter">
-            <div className="text">PRODUCT OVERVIEW</div>
-            <div className="filterCont">
-              <div className="categoriesFilter">
-                <span className={` ${category === "" && "underlined"}`} onClick={(e) => { setCategory(""); }}>All categories</span>
-                <span className={` ${category === "mens" && "underlined"}`} onClick={(e) => { setCategory("mens"); }}>Men</span>
-                <span className={` ${category === "womens" && "underlined"}`} onClick={(e) => { setCategory("womens"); }}>Women</span>
-                <span className={` ${category === "kids" && "underlined"}`} onClick={(e) => { setCategory("kids"); }}>Kids</span>
-              </div>
-              <div className="searchCont"></div>
-            </div>
-          </div>
-          <div className="cardCont">
-            {toggleModal ? <Modal ifModalToggle={toggleModal} setModalToggle={setToggleModal} idModal={idForModal} ></Modal> : null}
-            {apiData && apiData.map((x) => {
-              if (x.category.toLowerCase() === category.toLowerCase() || category === "") {
-                return <>
-                  <div className="card" key={x.id}>
-                    <div className="img">
-                      <img src={x.images} alt="" />
-                      <div className="hoverCard">
-                        <div className="details" onClick={() => { setIdForModal(x.id); setToggleModal(!toggleModal) }} >Details</div>
-                      </div>
-                    </div>
-                    <div className="name">{x.name}</div>
-                    <div className="price">${x.price}</div>
-
-                  </div>
-                </>
-              }
-            }
-
-            )}
-          </div>
-        </section>
+        <Products />
       </section >
     </>)
 }
